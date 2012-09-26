@@ -13,6 +13,7 @@ Developed By
 ==================
 
 Anderson Rodrigo Davi - <andersonrdavi@gmail.com>
+
 Fernando Geraldo Mantoan - <contato@fernandomantoan.com>
 
 License

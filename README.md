@@ -3,6 +3,11 @@ Latinoware 2012
 
 This Android application shows the Latinoware 2012 speechs and speakers. It has simple features, and if you wish to contribute or make any suggestions please use the GitHub issues.
 
+Play Store
+=================
+
+You can install the application in the Play Store: [https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware](https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware)
+
 Changelogs
 ==================
 

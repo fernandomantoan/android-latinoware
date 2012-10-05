@@ -1,27 +1,46 @@
 Latinoware 2012
 ==================
 
-This Android application shows the Latinoware 2012 speechs and speakers. It has simple features, and if you wish to contribute or make any suggestions please use the GitHub issues.
+Essa é uma aplicação não-oficial para exibir em dispositivos Android a grade de palestras da Latinoware 2012. No momento é uma aplicação simples e com poucos recursos, se você gostaria de contribuir ou fazer alguma sugestão veja a seção "Como Contribuir" logo abaixo.
 
 Play Store
 =================
 
-You can install the application in the Play Store: [https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware](https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware)
+A aplicação pode ser instalada a partir da Play Store: [https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware](https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware)
 
 Changelogs
 ==================
 
-## Version 0.1
-* List the speechs of all the event days with the speech name, the speaker and the hour of the speech
+## Versão 1.0 (beta)
+* Faz a listagem das palestras dos três dias de evento (17/10/2012, 18/10/2012, 19/10/2012), apresentando o nome da palestra, o palestrante e a hora da palestra.
 
-Developed By
+Criado por
 ==================
 
 Anderson Rodrigo Davi - <andersonrdavi@gmail.com>
 
 Fernando Geraldo Mantoan - <contato@fernandomantoan.com>
 
-License
+Webservice
+==================
+
+Para criar a aplicação foi necessário desenvolver um webservice que fornece uma API JSON para que as palestras possam ser exibidas na aplicação Android. Esse webservice **não** foi liberado como open-source, ele envolve uma boa complexidade, e para que não seja usado para outros fins senão a aplicação Android, está **restrito** somente ao nosso uso. Ele é uma aplicação PHP e faz a leitura diretamente da grade do LAPSI.
+
+Como Contribuir
+==================
+
+Para contribuir pedimos que, primeiramente, você crie uma tarefa na aba [https://github.com/fernandomantoan/android-latinoware/issues](Issues), independente se for bug, sugestões ou novas funcionalidades. Para testar a aplicação você pode instalar em seu computador o Ruby e o Sinatra e executar o arquivo **server/json.rb**.
+
+    ruby server/json.rb
+
+Este servidor irá fornecer rapidamente um serviço contendo dois exemplos de palestras para cada dia de evento. Para apontar a aplicação para o endereço, basta alterar a classe **FetchSpeechs** deixando o atributo **endpoint** com o seu IP apontando para a porta **4567** padrão do Sinatra. Ficaria algo similar ao seguinte:
+
+    private final String endpoint = "http://localhost:4567";
+
+Após criar a funcionalidade que deseja implementar aqui nas Issues do GitHub e ter seu ambiente funcionando, não esqueça de fazer o fork e submeter um Pull Request. Agradecemos sua colaboração!
+
+
+Licença
 ==================
 
     Copyright 2012 Fernando Geraldo Mantoan

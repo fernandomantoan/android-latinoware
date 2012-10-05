@@ -29,7 +29,7 @@ Para criar a aplicação foi necessário desenvolver um webservice que fornece u
 Como Contribuir
 ==================
 
-Para contribuir pedimos que, primeiramente, você crie uma tarefa na aba [https://github.com/fernandomantoan/android-latinoware/issues](Issues), independente se for bug, sugestões ou novas funcionalidades. Para testar a aplicação você pode instalar em seu computador o Ruby e o Sinatra e executar o arquivo **server/json.rb**.
+Para contribuir pedimos que, primeiramente, você crie uma tarefa na aba [Issues](https://github.com/fernandomantoan/android-latinoware/issues), independente se for bug, sugestões ou novas funcionalidades. Para testar a aplicação você pode instalar em seu computador o Ruby e o Sinatra e executar o arquivo **server/json.rb**.
 
     ruby server/json.rb
 

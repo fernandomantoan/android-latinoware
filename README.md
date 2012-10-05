@@ -35,7 +35,7 @@ Para contribuir pedimos que, primeiramente, você crie uma tarefa na aba [https:
 
 Este servidor irá fornecer rapidamente um serviço contendo dois exemplos de palestras para cada dia de evento. Para apontar a aplicação para o endereço, basta alterar a classe **FetchSpeechs** deixando o atributo **endpoint** com o seu IP apontando para a porta **4567** padrão do Sinatra. Ficaria algo similar ao seguinte:
 
-    private final String endpoint = "http://localhost:4567";
+    private final String endpoint = "http://10.0.0.2:4567";
 
 Após criar a funcionalidade que deseja implementar aqui nas Issues do GitHub e ter seu ambiente funcionando, não esqueça de fazer o fork e submeter um Pull Request. Agradecemos sua colaboração!
 

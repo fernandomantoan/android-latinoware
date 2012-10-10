@@ -11,18 +11,30 @@ import com.fernandomantoan.latinoware.model.Speech;
 
 public class SpeechConverter {
 	
-	public List<Speech> listFromJSON(String json) throws JSONException {
+	public static List<Speech> listFromJSON(String json) throws JSONException {
 		ArrayList<Speech> speechs = new ArrayList<Speech>();
 		
 		JSONObject objectJson = new JSONObject(json);
 		JSONArray array = objectJson.getJSONArray("speechs");
 		for (int i = 0; i < array.length(); i++) {
 			JSONObject object = array.getJSONObject(i);
-			Speech speech = new Speech(object.getString("title"), 
-					object.getString("speaker"), 
-					object.getString("date"),
-					object.getString("time"), 
-					object.getString("space"));
+			Speech speech = new Speech(
+					object.getString("title"), 
+					object.getString("space"),
+					object.getString("dateTime"));
+
+			JSONArray speakersJson = object.optJSONArray("speaker");
+			ArrayList<String> speakers = new ArrayList<String>();
+			
+			if (speakersJson != null) {
+				for (int j = 0; j < speakersJson.length(); j++) {
+					JSONObject speakerObject = speakersJson.getJSONObject(j);
+					speakers.add(speakerObject.getString("name"));
+				}
+				
+				speech.setSpeaker(speakers);
+			}
+			
 			speechs.add(speech);
 		}
 		

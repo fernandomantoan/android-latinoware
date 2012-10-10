@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="40dp"
         android:text="@string/titulo" />
     
     <TextView
-        android:id="@+id/speaker"
+        android:id="@+id/teachers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
@@ -25,28 +25,40 @@
         android:text="@string/palestrante" />
     
     <TextView
-        android:id="@+id/space"
+        android:id="@+id/lab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/speaker"
+        android:layout_below="@id/teachers"
         android:textStyle="bold"
         android:textSize="13dp"
         android:text="@string/espaco" />
     
-    <CheckBox 
-        android:id="@+id/watch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"/>
-    
     <TextView 
-        android:id="@+id/time"
+        android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/watch"
         android:layout_alignParentRight="true"
         android:textStyle="bold"
         android:textSize="24dp"
         android:text="@string/time" />
-
+    
+    <TextView 
+        android:id="@+id/until"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:layout_alignParentRight="true"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="às" />
+    
+    <TextView 
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/until"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:text="@string/time" />
 </RelativeLayout>

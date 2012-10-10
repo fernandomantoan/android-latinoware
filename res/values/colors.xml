@@ -18,4 +18,5 @@
 
 <resources>
     <color name="pressed_latinoware">#CCf47521</color>
+    <color name="opening_bg">#DCDCDC</color>
 </resources>

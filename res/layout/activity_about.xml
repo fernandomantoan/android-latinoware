@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+    
+    <ScrollView 
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <TextView 
+		        android:id="@+id/about_latinoware"
+		        android:textSize="18dp" 
+		        android:text="@string/about_latinoware" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:paddingBottom="8dp" />
+		    
+		    <TextView 
+		        android:id="@+id/header_about"
+		        android:linksClickable="true" 
+		        android:text="@string/about_header" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:autoLink="web" 
+		        android:paddingBottom="8dp" 
+		        android:textSize="14dp"
+		        android:layout_below="@id/about_latinoware"/>
+		    
+		    <TextView 
+		        android:id="@+id/about_app"
+		        android:textSize="18dp" 
+		        android:text="@string/about_app" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:paddingBottom="8dp" 
+		        android:layout_below="@id/header_about" />
+		    
+		    <TextView 
+		        android:id="@+id/header_middle"
+		        android:linksClickable="true" 
+		        android:text="@string/about_middle" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:autoLink="web"
+		        android:textSize="14dp"
+		        android:paddingBottom="8dp" 
+		        android:layout_below="@id/about_app" />
+		    
+		    <TextView 
+		        android:id="@+id/header_bottom"
+		        android:text="@string/copy" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="18dp"
+		        android:paddingBottom="8dp"
+		        android:layout_below="@id/header_middle" />
+		    
+		    <TextView 
+		        android:id="@+id/fernando"
+		        android:text="@string/fernando" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="14dp"
+		        android:paddingBottom="8dp"
+		        android:layout_below="@id/header_bottom" 
+		        android:autoLink="email" 
+		        android:linksClickable="true" />
+		    
+		    <TextView 
+		        android:id="@+id/anderson"
+		        android:text="@string/anderson" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="14dp"
+		        android:paddingBottom="8dp"
+		        android:layout_below="@id/fernando" 
+		        android:autoLink="email" 
+		        android:linksClickable="true" />
+		</RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

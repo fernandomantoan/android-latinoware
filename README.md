@@ -11,6 +11,15 @@ A aplicação pode ser instalada a partir da Play Store: [https://play.google.co
 Changelogs
 ==================
 
+## Versão 2.0
+* Funcionalidade para marcar palestras que serão assistidas.
+* Exibição de múltiplos palestrantes.
+* Apresentação dos mini-cursos do evento.
+* O layout da aplicação é o mesmo para os níveis da API suportados, antes a partir da versão 4.0 ele usava o layout com Dark ActionBar.
+* Agora a aplicação mantém a aba selecionada quando muda a orientação (portrait, landscape).
+* Tratamento de erros ao obter dados do servidor.
+* Banco de dados local, a aplicação irá obter dados do servidor somente na primeira execução.
+
 ## Versão 1.0 (beta)
 * Faz a listagem das palestras dos três dias de evento (17/10/2012, 18/10/2012, 19/10/2012), apresentando o nome da palestra, o palestrante e a hora da palestra.
 

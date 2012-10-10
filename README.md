@@ -42,7 +42,7 @@ Para contribuir pedimos que, primeiramente, você crie uma tarefa na aba [Issues
 
     ruby server/json.rb
 
-Este servidor irá fornecer rapidamente um serviço contendo dois exemplos de palestras para cada dia de evento. Para apontar a aplicação para o endereço, basta alterar a classe **FetchSpeechs** deixando o atributo **endpoint** com o seu IP apontando para a porta **4567** padrão do Sinatra. Ficaria algo similar ao seguinte:
+Este servidor irá fornecer rapidamente um serviço contendo dois exemplos de palestras para cada dia de evento e um exemplo de mini-curso para os três dias. Para apontar a aplicação para o endereço, basta alterar a classe **FetchSpeechs** deixando o atributo **endpoint** com o seu IP apontando para a porta **4567** padrão do Sinatra. Ficaria algo similar ao seguinte:
 
     private final String endpoint = "http://10.0.0.2:4567";
 

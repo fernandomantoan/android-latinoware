@@ -14,7 +14,9 @@ Essa é uma aplicação não-oficial para exibir em dispositivos Android a grade
 Play Store
 =================
 
-A aplicação pode ser instalada a partir da Play Store: [https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware](https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware)
+O aplicativo foi removido da Play Store, já que o evento acabou e já existe o aplicativo oficial por lá. Caso você queira instalar, pode gerar o pacote APK, permitir a instalação de aplicativos fora da Play Store no seu Android e instalá-lo diretamente pelo APK.
+
+Se já tiver instalado pela Play Store você conseguirá acessar a página do aplicativo pela URL [https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware](https://play.google.com/store/apps/details?id=com.fernandomantoan.latinoware), que está indisponível para novas instalações.
 
 Changelogs
 ==================

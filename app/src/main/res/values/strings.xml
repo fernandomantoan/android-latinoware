@@ -1,0 +1,38 @@
+<resources>
+
+    <string name="app_name">Latinoware 2012</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_my_grid">Minha Grade</string>
+    <string name="title_my_grid">Latinoware 2012 | Minha Grade</string>
+    <string name="title_latinoware">Latinoware 2012 | Palestras</string>
+    <string name="titulo">Título da Palestra</string>
+    <string name="palestrante">Nome do Palestrante</string>
+    <string name="espaco">Espaço da Apresentação</string>
+    <string name="time">00:00</string>
+    <string name="close_btn">Fechar</string>
+	<string name="palestras">Palestras</string>
+	<string name="minha_grade">Minha Grade</string>
+	<string name="cursos">Mini Cursos</string>
+	<string name="about">Sobre</string>
+	<string name="about_latinoware">
+	    O Evento
+	</string>
+	<string name="about_header">
+	    A IX Conferência Latino-Americana de Software Livre – "Latinoware 2012" acontecerá na ITAIPU Binacional na cidade de Foz do Iguaçu Paraná. Saiba mais sobre o evento: http://latinoware.org
+	</string>
+	<string name="about_app">
+	    Sobre a Aplicação
+	</string>
+	<string name="about_middle">
+	    Esta é uma aplicação não-oficial desenvolvida como código aberto para apresentar em seu celular a grade de palestras. Você pode contribuir de diversas formas como corrigindo ou reportando bugs, traduzindo para outros idiomas ou sugerindo novos recursos. Acesse o link: https://github.com/fernandomantoan/android-latinoware para saber mais e fazer sua contribuição.
+	</string>
+	<string name="copy">
+	    Desenvolvido por
+	</string>
+	<string name="fernando">
+	    - Fernando Geraldo Mantoan (contato@fernandomantoan.com)
+	</string>
+    <string name="anderson">
+        - Anderson Rodrigo Davi (andersonrdavi@gmail.com)
+    </string>
+</resources>

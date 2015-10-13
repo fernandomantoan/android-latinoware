@@ -3,13 +3,7 @@ Latinoware 2012
 
 Essa é uma aplicação não-oficial para exibir em dispositivos Android a grade de palestras da Latinoware 2012. No momento é uma aplicação simples e com poucos recursos, se você gostaria de contribuir ou fazer alguma sugestão veja a seção "Como Contribuir" logo abaixo.
 
-![Screen 1](https://lh5.ggpht.com/RyUDRn53z1HE6j0OW1nfjLLmqPyJ_M2K44S2TecrBsAl8Va98UO2_3qrmGnKXpZWdb4)
-
-![Screen 2](https://lh5.ggpht.com/5CGY1X8LOSHuat-hto9zypOKiEoMNBBLbp7Us3sqDPnEAq6ghSJuTKQsiq0g9lW4VQ)
-
-![Screen 3] (https://lh6.ggpht.com/p_zD_QahCBAeWSJCRP5ZXxFbhFOVwMI10TIvoIxogdqyqFKdG_xlX9nX_c10K0saF18)
-
-![Screen 4](https://lh6.ggpht.com/jPuFSqHzK5XFJhTTk6CTokX86Vo9YcSB6onVCHCcWYakVVwlrUAgkHUC-X3SjqHUp38)
+<img src="screens/screen1.png" height="310" alt="Screen 1" /> <img src="screens/screen2.png" height="310" alt="Screen 2" /> <img src="screens/screen3.png" height="310" alt="Screen 3" /> <img src="screens/screen4.png" height="310" alt="Screen 4" />
 
 Play Store
 =================
@@ -20,6 +14,10 @@ Se já tiver instalado pela Play Store você conseguirá acessar a página do ap
 
 Changelogs
 ==================
+
+## Versão 2.1
+* Material Design
+* Refactor do código-fonte para usar a Android Support Library
 
 ## Versão 2.0
 * Funcionalidade para marcar palestras que serão assistidas.
@@ -75,4 +73,3 @@ Licença
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-

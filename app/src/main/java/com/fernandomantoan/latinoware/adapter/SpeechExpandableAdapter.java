@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import android.app.Activity;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.fernandomantoan.latinoware.activity.LatinowareScheduleActivity;
 import com.fernandomantoan.latinoware.LatinowareApp;
 import com.fernandomantoan.latinoware.R;
 import com.fernandomantoan.latinoware.model.Speech;
@@ -24,14 +24,14 @@ public class SpeechExpandableAdapter extends BaseExpandableListAdapter {
 	
 	private Calendar[] groups;
 	private List<List<Speech>> childs;
-	private Activity activity;
+	private LatinowareScheduleActivity mActivity;
 	private LayoutInflater inflater;
 	private LatinowareApp app;
 
-	public SpeechExpandableAdapter(Activity activity, 
+	public SpeechExpandableAdapter(LatinowareScheduleActivity activity,
 			Calendar[] groups, List<Speech> childs) {
 		this.groups = groups;
-		this.activity = activity;
+		this.mActivity = activity;
 		this.app = (LatinowareApp) activity.getApplication();
 		this.childs = new ArrayList<List<Speech>>(groups.length);
 
@@ -65,10 +65,10 @@ public class SpeechExpandableAdapter extends BaseExpandableListAdapter {
 		Speech speech = this.childs.get(groupPosition).get(childPosition);
 		
 		if (speech.getType().equals("OPENING")) {
-			inflater = activity.getLayoutInflater();
+			inflater = mActivity.getLayoutInflater();
 			convertView = inflater.inflate(R.layout.opening_list_item, parent, false);
 		} else {
-			inflater = activity.getLayoutInflater();
+			inflater = mActivity.getLayoutInflater();
 			convertView = inflater.inflate(R.layout.speech_list_item, parent, false);
 		}
 		TextView title = (TextView) convertView.findViewById(R.id.title);
@@ -104,7 +104,7 @@ public class SpeechExpandableAdapter extends BaseExpandableListAdapter {
 			CheckBox watch = (CheckBox) v;
 			Speech speech = (Speech) watch.getTag();
 			
-			Repository repository = new Repository(new DatabaseHelper(activity));
+			Repository repository = new Repository(new DatabaseHelper(mActivity));
 			
 			if(watch.isChecked()) {
 				for(Speech s : app.getSpeechsChecked()) {
@@ -119,6 +119,7 @@ public class SpeechExpandableAdapter extends BaseExpandableListAdapter {
 			repository.update(speech);
 			repository.close();
 			notifyDataSetChanged();
+			mActivity.invalidateViewPager();
 		}
 	};
 	
@@ -146,7 +147,7 @@ public class SpeechExpandableAdapter extends BaseExpandableListAdapter {
 	public View getGroupView(int groupPosition, boolean isExpanded,
 			View convertView, ViewGroup parent) {
 		if(convertView == null) {
-			inflater = activity.getLayoutInflater();
+			inflater = mActivity.getLayoutInflater();
 			convertView = inflater.inflate(android.R.layout.simple_expandable_list_item_1, parent, false);
 		}
 		TextView group = (TextView) convertView.findViewById(android.R.id.text1);

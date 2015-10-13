@@ -11,7 +11,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.fernandomantoan.latinoware.Latinoware;
+import com.fernandomantoan.latinoware.activity.LatinowareScheduleActivity;
 import com.fernandomantoan.latinoware.R;
 import com.fernandomantoan.latinoware.converter.CourseConverter;
 import com.fernandomantoan.latinoware.converter.SpeechConverter;
@@ -25,14 +25,14 @@ public class FetchSpeechs extends AsyncTask<String, Object, String> {
 	
 	private final static String ENDPOINT = "";
 	
-	private final Latinoware activity;
+	private final LatinowareScheduleActivity activity;
 	
 	private List<Speech> speechs;
 	private List<Course> courses;
 	
 	private ProgressDialog progressDialog;
 
-	public FetchSpeechs(Latinoware activity) {
+	public FetchSpeechs(LatinowareScheduleActivity activity) {
 		this.activity = activity;
 	}
 	

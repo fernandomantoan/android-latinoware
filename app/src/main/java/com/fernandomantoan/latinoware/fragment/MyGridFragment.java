@@ -1,44 +1,59 @@
 package com.fernandomantoan.latinoware.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.fernandomantoan.latinoware.activity.LatinowareScheduleActivity;
 import com.fernandomantoan.latinoware.LatinowareApp;
 import com.fernandomantoan.latinoware.R;
 import com.fernandomantoan.latinoware.adapter.SpeechExpandableAdapter;
 
-public class MyGridFragment extends SherlockFragment {
+public class MyGridFragment extends Fragment {
 
 	private LatinowareApp app;
 	private ExpandableListView list;
-	private SherlockFragmentActivity activity;
-	
+	private LatinowareScheduleActivity mActivity;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.activity = getSherlockActivity();
-		this.app = (LatinowareApp) activity.getApplication();
+		this.mActivity = (LatinowareScheduleActivity) getActivity();
+		this.app = (LatinowareApp) mActivity.getApplication();
 	}
-	
+
 	@Override
+	public void onPause() {
+		super.onPause();
+		Log.d("TEST", "onPause");
+	}
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("TEST", "onResume");
+    }
+
+    @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.tab_fragment, container, false);
-		
+
 		list = (ExpandableListView) view.findViewById(android.R.id.list);
 		list.setAdapter(new SpeechExpandableAdapter(
-				activity, app.getDaysOfEvent(), app.getSpeechsChecked()));
-		/* Expande todos os grupos
-		for(int pos = 0; pos < app.getDaysOfEvent().length; pos++) {
-			list.expandGroup(pos);
-		}
-		*/
+                mActivity, app.getDaysOfEvent(), app.getSpeechsChecked()));
+
+        // http://stackoverflow.com/questions/30612453/scrollingviewbehavior-for-listview
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            list.setNestedScrollingEnabled(true);
+        }
+
 		return view;
 	}
-	
+
 }

@@ -1,4 +1,4 @@
-package com.fernandomantoan.latinoware;
+package com.fernandomantoan.latinoware.activity;
 
 import java.util.List;
 
@@ -7,18 +7,18 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar.TabListener;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Window;
-import com.fernandomantoan.latinoware.activity.AboutActivity;
-import com.fernandomantoan.latinoware.listener.LatinowareTabListener;
-import com.fernandomantoan.latinoware.listener.LatinowareTabListener.Tag;
+import com.fernandomantoan.latinoware.LatinowareApp;
+import com.fernandomantoan.latinoware.R;
+import com.fernandomantoan.latinoware.adapter.FixedTabsPagerAdapter;
 import com.fernandomantoan.latinoware.model.Course;
 import com.fernandomantoan.latinoware.model.Speech;
 import com.fernandomantoan.latinoware.repository.CourseRepository;
@@ -26,7 +26,7 @@ import com.fernandomantoan.latinoware.repository.SpeechRepository;
 import com.fernandomantoan.latinoware.support.DatabaseHelper;
 import com.fernandomantoan.latinoware.task.FetchSpeechs;
 
-public class Latinoware extends SherlockFragmentActivity implements Runnable {
+public class LatinowareScheduleActivity extends AppCompatActivity implements Runnable {
 	
 	private static final String PREFERENCES = "LatinowarePrefs";
 	
@@ -40,18 +40,27 @@ public class Latinoware extends SherlockFragmentActivity implements Runnable {
 
 	private Handler handler;
 
+    private ViewPager mViewPager;
+
+    private FixedTabsPagerAdapter mPagerAdapter;
+
+    private TabLayout mTabLayout;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-		setSupportProgressBarIndeterminateVisibility(true);
-		setSupportProgressBarIndeterminate(true);
-		setSupportProgressBarVisibility(true);
 		setContentView(R.layout.activity_main);
 		initParams(savedInstanceState);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
 		
-		if(dataLoadedFromServer) {
-			if(app.speechsIsEmpty()) {
+		if (dataLoadedFromServer) {
+			if (app.speechsIsEmpty()) {
 				loadingDataFromDatabase();
 			}
 			createTabs(selectedTab);
@@ -73,34 +82,14 @@ public class Latinoware extends SherlockFragmentActivity implements Runnable {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		int index = getSupportActionBar().getSelectedNavigationIndex();
+		int index = mViewPager.getCurrentItem();
 		outState.putInt("selectedTab", index);
 	}
 
 	private void createTabs(int selectedTab) {
-
-		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		TabListener tabListener = new LatinowareTabListener(this);
-
-		Tab tab1 = getSupportActionBar().newTab().setTag(Tag.SPEECHS)
-				.setText(getString(R.string.palestras))
-				.setTabListener(tabListener);
-		getSupportActionBar().addTab(tab1, false);
-
-		Tab tab2 = getSupportActionBar().newTab().setTag(Tag.MY_GRID)
-				.setText(getString(R.string.minha_grade))
-				.setTabListener(tabListener);
-		getSupportActionBar().addTab(tab2, false);
-
-		Tab tab3 = getSupportActionBar().newTab().setTag(Tag.COURSES)
-				.setText(getString(R.string.cursos))
-				.setTabListener(tabListener);
-		getSupportActionBar().addTab(tab3, false);
-
-		getSupportActionBar().getTabAt(selectedTab).select();
-
-		setSupportProgressBarIndeterminateVisibility(false);
-		setSupportProgressBarVisibility(false);
+        mPagerAdapter = new FixedTabsPagerAdapter(getSupportFragmentManager(), LatinowareScheduleActivity.this);
+        mViewPager.setAdapter(mPagerAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
 	}
 
 	public Handler getHandler() {
@@ -148,7 +137,7 @@ public class Latinoware extends SherlockFragmentActivity implements Runnable {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getSupportMenuInflater().inflate(R.menu.latinoware, menu);
+		getMenuInflater().inflate(R.menu.latinoware, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -160,5 +149,9 @@ public class Latinoware extends SherlockFragmentActivity implements Runnable {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
+	public void invalidateViewPager() {
+        mPagerAdapter.setSelected(mViewPager.getCurrentItem());
+        mViewPager.getAdapter().notifyDataSetChanged();
+	}
 }

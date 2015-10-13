@@ -3,7 +3,7 @@ Latinoware 2012
 
 Essa é uma aplicação não-oficial para exibir em dispositivos Android a grade de palestras da Latinoware 2012. No momento é uma aplicação simples e com poucos recursos, se você gostaria de contribuir ou fazer alguma sugestão veja a seção "Como Contribuir" logo abaixo.
 
-<img src="screens/screen1.png" height="310" alt="Screen 1" /> <img src="screens/screen2.png" height="310" alt="Screen 2" /> <img src="screens/screen3.png" height="310" alt="Screen 3" /> <img src="screens/screen4.png" height="310" alt="Screen 4" />
+<img src="screens/screen1.png" height="310" alt="Screen 1" /> <img src="screens/screen2.png" height="310" alt="Screen 2" /> <img src="screens/screen3.png" height="310" alt="Screen 3" />
 
 Play Store
 =================
